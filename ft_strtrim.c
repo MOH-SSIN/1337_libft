@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/31 12:56:49 by mez-zahi          #+#    #+#             */
+/*   Updated: 2024/10/31 12:56:50 by mez-zahi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_trouver(char c, const char *set2)
@@ -5,7 +17,7 @@ static int	ft_trouver(char c, const char *set2)
 	while (*set2)
 	{
 		if (*set2 == c)
-		return (1);
+			return (1);
 		set2++;
 	}
 	return (0);
@@ -31,20 +43,21 @@ static int	ft_index_fin(const char *s1, const char *set)
 	return (fin);
 }
 
-char	*ft_new_chaine(char *ptr,const char* s1,int debut,size_t len)
+char	*ft_new_chaine(char *ptr, const char *s1, int debut, size_t len)
 {
 	size_t	i;
 
-	for (i = 0; i < len; i++)
+	i = -1;
+	while (++i < len)
 		ptr[i] = s1[debut + i];
 	ptr[len] = '\0';
-	return(ptr);
+	return (ptr);
 }
 
-char	*ft_strtrim(char const *s1, char const *set) 
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	debut;
-	int	fin;
+	int		debut;
+	int		fin;
 	size_t	len;
 	char	*ptr;
 
@@ -59,10 +72,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	debut = ft_index_debut(s1, set);
 	fin = ft_index_fin(s1, set);
 	if (debut > fin)
-		return strdup("");
+		return (ft_strdup(""));
 	len = fin - debut + 1;
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	return (ft_new_chaine(ptr,s1,debut,len));
+	return (ft_new_chaine(ptr, s1, debut, len));
 }

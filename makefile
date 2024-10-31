@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/31 12:57:29 by mez-zahi          #+#    #+#              #
+#    Updated: 2024/10/31 12:57:31 by mez-zahi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 SRCS =  ft_split.c  ft_strchr.c ft_strtrim.c ft_substr.c ft_memmove.c ft_strlen.c  ft_strrchr.c ft_bzero.c ft_strdup.c ft_calloc.c\
 		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_memcpy.c ft_memcmp.c ft_strlcpy.c ft_strlcat.c\

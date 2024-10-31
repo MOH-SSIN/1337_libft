@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mez-zahi <mez-zahi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/31 12:56:36 by mez-zahi          #+#    #+#             */
+/*   Updated: 2024/10/31 12:56:38 by mez-zahi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -8,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*ptr;
 
 	i = 0;
-	ptr = (char *)haystack;//pour eviter errure de assigning to char* from const char*
+	ptr = (char *)haystack;
 	size = ft_strlen(needle);
 	if (!size)
 		return (ptr);
