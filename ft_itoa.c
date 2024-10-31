@@ -1,22 +1,22 @@
 #include "libft.h"
 
-static size_t	count_size(long nb)
+static size_t	count_size(long nbr)
 {
 	size_t	size;
 
 	size = 0;
-	if (nb < 0)
+	if (nbr < 0)
 	{
-		nb = nb * (-1);
+		nbr = nbr * (-1);
 		size = 1;
 	}
-	if (nb == 0)
+	if (nbr == 0)
 		size = 1;
 	else
 	{
-		while (nb)
+		while (nbr)
 		{
-			nb = nb / 10;
+			nbr = nbr / 10;
 			size++;
 		}
 	}
@@ -26,27 +26,27 @@ static size_t	count_size(long nb)
 char	*ft_itoa(int n)
 {
 	size_t	size;
-	long	nb;
+	long	nbr;
 	char	*str;
-	int		is_negative;
+	int		negative;
 
 	size = count_size((long) n);
 	str = (char *) malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (NULL);
-	nb = (long) n; // fi7alte kan nb kisawi int min -2147483648
-	is_negative = 0;
-	if (nb < 0)
+	nbr = (long) n;
+	negative = 0;
+	if (nbr < 0)
 	{
-		nb = nb * (-1);
+		nbr *= -1;
 		str[0] = '-';
-		is_negative = 1;
+		negative = 1;
 	}
 	str[size] = '\0';
-	while (size > (size_t) is_negative) // is_negative dart bach ila kan 3adad mojabe nbda n7ote man case 0 sino rah nbda man case 1 7ite case 0 b9ate lsigne -;
+	while (size > (size_t) negative)
 	{
-		str[size - 1] = nb % 10 + '0';
-		nb = nb / 10;
+		str[size - 1] = nbr % 10 + '0';
+		nbr = nbr / 10;
 		size--;
 	}
 	return (str);

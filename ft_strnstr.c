@@ -1,6 +1,5 @@
 #include "libft.h"
 
-
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
@@ -9,17 +8,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	char	*ptr;
 
 	i = 0;
-	ptr = (char *)haystack;
+	ptr = (char *)haystack;//pour eviter errure de assigning to char* from const char*
 	size = ft_strlen(needle);
-
 	if (!size)
 		return (ptr);
-		
 	while (ptr[i] != '\0' && i < len)
 	{
 		c = 0;
 		while (ptr[i + c] != '\0' && needle[c] != '\0'
-				&& ptr[i + c] == needle[c] && i + c < len)
+			&& ptr[i + c] == needle[c] && i + c < len)
 			c++;
 		if (c == size)
 			return (ptr + i);

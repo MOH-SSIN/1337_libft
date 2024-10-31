@@ -1,4 +1,3 @@
-
 #include "libft.h"
 
 static void	print_nb(long nb, int fd)
@@ -16,7 +15,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	nb;
 
-	nb = n;
+	nb = (long)n;
 	if (nb < 0)
 	{
 		write(fd, "-", 1);

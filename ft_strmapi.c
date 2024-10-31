@@ -1,6 +1,5 @@
 #include "libft.h"
 
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
@@ -18,10 +17,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new[i] = '\0';
 	return (new);
 }
-
-// static char to_upper(unsigned int index, char c) {
-//     if (index % 2 == 0 && c >= 'a' && c <= 'z') {
-//         return c - 32;  // Convertir en majuscule si l'index est pair
-//     }
-//     return c;
-// }

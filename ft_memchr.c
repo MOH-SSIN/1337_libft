@@ -1,7 +1,6 @@
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
-//n : Nombre d'octets à examiner à partir de l'adresse pointée par s.
 {
 	size_t	index;
 
@@ -12,6 +11,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (((unsigned char *)s) + index);
 		index++;
 	}
-	
 	return (NULL);
 }
